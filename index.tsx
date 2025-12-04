@@ -1,1 +1,1 @@
-// Logic moved to App.tsx for standalone execution.
+// Logic moved to index.html for standalone execution on GitHub Pages.
