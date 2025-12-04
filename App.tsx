@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom/client';
 import { 
   Linkedin, 
   Mail, 
@@ -13,9 +14,54 @@ import {
   FileText,
   Utensils,
   BookOpen,
-  Activity
+  Activity,
+  Code,
+  Award,
+  Dumbbell
 } from 'lucide-react';
-import { Card, CardHeader } from './components/Card';
+
+// --- Components Definitions (Merged for Standalone) ---
+
+export interface CardProps {
+  children: React.ReactNode;
+  className?: string;
+  onClick?: () => void;
+  noPadding?: boolean;
+}
+
+export const Card: React.FC<CardProps> = ({ children, className = '', onClick, noPadding = false }) => {
+  return (
+    <div 
+      onClick={onClick}
+      className={`
+        bg-white rounded-3xl border-2 border-brand-dark 
+        shadow-neo transition-all duration-200 ease-out
+        hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-neo-hover
+        flex flex-col relative overflow-hidden
+        ${noPadding ? '' : 'p-6'}
+        ${className}
+      `}
+    >
+      {children}
+    </div>
+  );
+};
+
+const CardHeader: React.FC<{ title: string; subtitle?: string; icon?: React.ReactNode }> = ({ title, subtitle, icon }) => (
+  <div className="flex items-start justify-between mb-4">
+    <div>
+      <h3 className="font-bold text-xl leading-tight">{title}</h3>
+      {subtitle && <p className="text-gray-500 text-sm mt-1">{subtitle}</p>}
+    </div>
+    {icon && (
+      <div className="text-brand-dark bg-gray-100 p-2 rounded-xl">
+        {icon}
+      </div>
+    )}
+  </div>
+);
+
+// --- Main App Component ---
 
 const App: React.FC = () => {
   
@@ -251,6 +297,56 @@ const App: React.FC = () => {
              </Card>
         </div>
 
+        {/* 6. Skills & Interests (Replaces Chat) */}
+        <Card className="md:col-span-2 md:row-span-2 flex flex-col gap-6">
+            <CardHeader title="Skills & Interests" icon={<Award size={20} />} />
+            
+            <div className="space-y-4">
+                <div>
+                    <h4 className="font-bold text-sm text-gray-500 mb-2 flex items-center gap-2">
+                        <Code size={16} /> Technical & Engineering
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                        {['Python', 'HTML', 'FastAPI', 'Docker', 'CFD (Particleworks)', 'CAD (SpaceClaim)'].map(skill => (
+                            <span key={skill} className="px-3 py-1 bg-gray-100 rounded-lg text-sm font-bold text-gray-700 border border-gray-200">
+                                {skill}
+                            </span>
+                        ))}
+                    </div>
+                </div>
+
+                <div>
+                    <h4 className="font-bold text-sm text-gray-500 mb-2 flex items-center gap-2">
+                         <Dumbbell size={16} /> Athletics & Extracurriculars
+                    </h4>
+                    <div className="space-y-2">
+                         <div className="flex items-center gap-3 p-2 bg-yellow-50 rounded-xl border border-yellow-100">
+                            <span className="text-xl">🏊‍♂️🚴🏃</span>
+                            <span className="font-bold text-brand-dark text-sm">Ironman 70.3 Finisher</span>
+                         </div>
+                         <div className="flex items-center gap-3 p-2 bg-blue-50 rounded-xl border border-blue-100">
+                            <span className="text-xl">🏃‍♂️</span>
+                            <span className="font-bold text-brand-dark text-sm">Boston Marathon Finisher</span>
+                         </div>
+                         <div className="flex items-center gap-3 p-2 bg-purple-50 rounded-xl border border-purple-100">
+                            <span className="text-xl">📈</span>
+                            <span className="font-bold text-brand-dark text-sm">Active Investor (Crypto/Stocks)</span>
+                         </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 className="font-bold text-sm text-gray-500 mb-2 flex items-center gap-2">
+                         <Award size={16} /> Certificates
+                    </h4>
+                     <ul className="text-sm font-medium text-gray-600 list-disc list-inside space-y-1">
+                        <li>HarvardX: Intro to AI with Python</li>
+                        <li>IELTS: 7.5 (2015)</li>
+                     </ul>
+                </div>
+            </div>
+        </Card>
+
       </main>
 
       {/* Footer */}
@@ -265,4 +361,14 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+// --- Mount the App ---
+
+const rootElement = document.getElementById('root');
+if (rootElement) {
+  const root = ReactDOM.createRoot(rootElement);
+  root.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+}

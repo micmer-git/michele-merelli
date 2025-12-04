@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface CardProps {
+export interface CardProps {
   children: React.ReactNode;
   className?: string;
   onClick?: () => void;
@@ -24,17 +24,3 @@ export const Card: React.FC<CardProps> = ({ children, className = '', onClick, n
     </div>
   );
 };
-
-export const CardHeader: React.FC<{ title: string; subtitle?: string; icon?: React.ReactNode }> = ({ title, subtitle, icon }) => (
-  <div className="flex items-start justify-between mb-4">
-    <div>
-      <h3 className="font-bold text-xl leading-tight">{title}</h3>
-      {subtitle && <p className="text-gray-500 text-sm mt-1">{subtitle}</p>}
-    </div>
-    {icon && (
-      <div className="text-brand-dark bg-gray-100 p-2 rounded-xl">
-        {icon}
-      </div>
-    )}
-  </div>
-);

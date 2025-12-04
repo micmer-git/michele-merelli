@@ -1,21 +1,12 @@
 import { GoogleGenAI } from "@google/genai";
 
-const apiKey = process.env.API_KEY || '';
-
-// Initialize properly only if key exists to avoid immediate crash, 
-// though we handle the missing key in the UI.
-const ai = apiKey ? new GoogleGenAI({ apiKey }) : null;
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 export const streamGeminiResponse = async (
   history: { role: string; text: string }[],
   newMessage: string,
   onChunk: (text: string) => void
 ) => {
-  if (!ai) {
-    onChunk("I'm sorry, I don't have an API key configured right now. Please set the API_KEY environment variable.");
-    return;
-  }
-
   try {
     const model = 'gemini-2.5-flash';
     const systemInstruction = `You are a helpful, witty, and concise AI assistant living on a personal portfolio website. 
