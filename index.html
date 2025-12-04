@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Michele Merelli | Futurist & Engineer</title>
+    <title>Michele Merelli | Profile</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=VT323&display=swap" rel="stylesheet">
     
-    <!-- Babel Standalone for in-browser JSX compilation -->
+    <!-- Babel Standalone -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <script>
@@ -16,26 +16,31 @@
           extend: {
             fontFamily: {
               sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+              pixel: ['"VT323"', 'monospace'],
             },
             colors: {
-              'brand-bg': '#f8f7f4',
-              'brand-dark': '#1a1a1a',
-              'brand-accent': '#FFD233', // Yellow
-              'brand-purple': '#bfa1ff', 
-              'brand-blue': '#3B82F6',
-              'brand-green': '#4ADE80',
+              'brand-bg': '#f8f9fa',
+              'brand-dark': '#202124',
+              // Google I/O Palette
+              'io-blue': '#4285F4',
+              'io-red': '#EA4335',
+              'io-yellow': '#FBBC04',
+              'io-green': '#34A853',
+              'io-gray': '#5f6368',
             },
             boxShadow: {
-              'neo': '4px 4px 0px 0px rgba(0,0,0,1)',
-              'neo-hover': '6px 6px 0px 0px rgba(0,0,0,1)',
-              'neo-sm': '2px 2px 0px 0px rgba(0,0,0,1)',
+              'neo': '4px 4px 0px 0px rgba(32,33,36,1)',
+              'neo-hover': '6px 6px 0px 0px rgba(32,33,36,1)',
+              'neo-sm': '2px 2px 0px 0px rgba(32,33,36,1)',
+            },
+            animation: {
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
             }
           }
         }
       }
     </script>
     
-    <!-- Import Map for reliable module delivery -->
     <script type="importmap">
     {
       "imports": {
@@ -45,33 +50,156 @@
       }
     }
     </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f8f9fa;
+            border-left: 2px solid #202124;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #202124;
+            border-radius: 0;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4285F4;
+        }
+
+        /* "Quadretti" Grid Pattern */
+        .bg-grid-pattern {
+            background-image: 
+                linear-gradient(to right, #000000 1px, transparent 1px),
+                linear-gradient(to bottom, #000000 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        /* Pixel Art Scene: Runner + Banana */
+        .pixel-scene {
+            width: 1px;
+            height: 1px;
+            background: transparent;
+            box-shadow: 
+                /* --- RUNNER (Left) --- */
+                /* Head (Beige) */
+                4px 5px 0 0 #FCD5B5, 5px 5px 0 0 #FCD5B5, 6px 5px 0 0 #FCD5B5,
+                4px 6px 0 0 #FCD5B5, 5px 6px 0 0 #FCD5B5, 6px 6px 0 0 #FCD5B5,
+                /* Hair (Black) */
+                4px 4px 0 0 #202124, 5px 4px 0 0 #202124, 6px 4px 0 0 #202124, 7px 5px 0 0 #202124,
+                /* Shirt (Blue) */
+                4px 7px 0 0 #4285F4, 5px 7px 0 0 #4285F4, 6px 7px 0 0 #4285F4,
+                3px 8px 0 0 #4285F4, 4px 8px 0 0 #4285F4, 5px 8px 0 0 #4285F4, 6px 8px 0 0 #4285F4, 7px 8px 0 0 #4285F4,
+                4px 9px 0 0 #4285F4, 5px 9px 0 0 #4285F4, 6px 9px 0 0 #4285F4,
+                /* Shorts (Red) */
+                4px 10px 0 0 #EA4335, 5px 10px 0 0 #EA4335, 6px 10px 0 0 #EA4335,
+                /* Legs (Beige) running pose */
+                4px 11px 0 0 #FCD5B5, /* Left leg down */
+                7px 10px 0 0 #FCD5B5, 7px 11px 0 0 #FCD5B5, /* Right leg back/up */
+                /* Shoes (White) */
+                3px 11px 0 0 #FFFFFF, 4px 12px 0 0 #FFFFFF,
+                8px 11px 0 0 #FFFFFF,
+
+                /* --- BANANA (Right) --- */
+                /* Stalk */
+                13px 4px 0 0 #34A853,
+                /* Body (Yellow) */
+                12px 5px 0 0 #FBBC04, 13px 5px 0 0 #FBBC04,
+                11px 6px 0 0 #FBBC04, 14px 6px 0 0 #FBBC04,
+                11px 7px 0 0 #FBBC04, 14px 7px 0 0 #FBBC04,
+                11px 8px 0 0 #FBBC04, 14px 8px 0 0 #FBBC04,
+                12px 9px 0 0 #FBBC04, 13px 9px 0 0 #FBBC04,
+                12px 10px 0 0 #FBBC04,
+                /* Tips/Spots (Brown) */
+                12px 11px 0 0 #5f6368;
+        }
+        
+        .avatar-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent; 
+            image-rendering: pixelated;
+        }
+    </style>
   </head>
-  <body class="bg-brand-bg text-brand-dark antialiased selection:bg-brand-accent selection:text-black">
+  <body class="text-brand-dark antialiased selection:bg-io-yellow selection:text-black min-h-screen relative overflow-x-hidden">
     <div id="root"></div>
     
-    <!-- Application Logic Inline -->
     <script type="text/babel" data-type="module">
-      import React from 'react';
+      import React, { useState } from 'react';
       import ReactDOM from 'react-dom/client';
       import { 
         Linkedin, 
         Mail, 
         ArrowUpRight, 
-        Zap, 
-        Briefcase, 
-        GraduationCap,
         Youtube, 
-        Globe,
-        TrendingUp,
-        Cpu,
-        FileText,
         Utensils,
         BookOpen,
         Activity,
-        Code,
-        Award,
-        Dumbbell
+        FileText,
+        Archive,
+        X,
+        ChevronRight,
+        ChevronDown,
+        MapPin,
+        Calendar,
+        Cpu,
+        Globe,
+        Zap,
+        Heart,
+        Coffee,
+        Trophy,
+        Music
       } from 'lucide-react';
+
+      // --- Data Content ---
+
+      const wikiData = {
+        "Natura": [
+            { title: "ff.58 Le banane inquinano troppo?", desc: "Emissioni, costo vita umana e hamburger vs asparagi.", link: "https://fortissimo.substack.com/p/ff58-le-banane-inquinano-troppo" },
+            { title: "ff.51 La religione del 21esimo secolo", desc: "Il sottile equilibrio tra Greta, Greenpeace e speranza.", link: "https://fortissimo.substack.com/p/ff51-la-religione-del-21esimo-secolo" },
+            { title: "ff.20 Greta in bici?", desc: "Da Isola dei cani di Wes Anderson a Van Moof.", link: "https://fortissimo.substack.com/p/-ff20-greta-in-bici" },
+            { title: "ff.33 Le piante ci salveranno?", desc: "Algoritmi, cattura di CO2 e problemi da risolvere.", link: "https://fortissimo.substack.com/p/-ff33-le-piante-ci-salveranno" },
+            { title: "ff.5 Elettrizzante", desc: "Tesla, Van Moof, Duracell? La sfida della mobilità.", link: "https://fortissimo.substack.com/p/-ff5-elettrizzante" },
+            { title: "ff.34 Ripensare le città", desc: "Lezioni dal COVID e dal cambiamento climatico.", link: "https://fortissimo.substack.com/p/ff34-ripensare-le-citta" },
+            { title: "ff.91 I sassi, le luci, il sale", desc: "Litio, laghi salati, arte e nucleare.", link: "https://fortissimo.substack.com/p/ff90-il-sale-della-terra" }
+        ],
+        "Tecnologia": [
+            { title: "ff.127 Jazz con ChatGPT", desc: "Rick Rubin, Vibe Coding e Leopardi quantistico.", link: "https://fortissimo.substack.com/p/ff127-jazz-con-chatgpt" },
+            { title: "ff.117 Viviamo in una simulazione", desc: "Tra Hong Kong, Oscar e Black Mirror.", link: "https://fortissimo.substack.com/p/ff117-viviamo-in-una-simulazione" },
+            { title: "ff.116 L'anno del serpente / 2", desc: "Rileggere l'AI grazie a Nietzsche.", link: "https://fortissimo.substack.com/p/ff116-lanno-del-serpente-2" },
+            { title: "ff.112 Acqua imprevedibile", desc: "Previsioni, OpenAI O3 e guadagnare tempo.", link: "https://fortissimo.substack.com/p/ff112-acqua-imprevedibile" },
+            { title: "ff.102 Il futuro in una conchiglia", desc: "Salvini in arabo e la rivincita di Wuhan.", link: "https://fortissimo.substack.com/p/ff102-il-futuro-in-una-conchiglia" },
+            { title: "ff.88 Singolarità nel 2029?", desc: "L'accelerazione robotica grazie a ChatGPT.", link: "https://fortissimo.substack.com/p/ff88-singolarita-nel-2029" },
+            { title: "ff.54 Come capire una rivoluzione", desc: "Scanner neurali e vita dentro il cambiamento.", link: "https://fortissimo.substack.com/p/ff54-come-capire-una-rivoluzione" },
+            { title: "ff.103 Fuoco, Ferro, Intelligenza", desc: "Modello o1 di OpenAI: la nuova era.", link: "https://fortissimo.substack.com/p/ff103-fuoco-ferro-intelligenza" }
+        ],
+        "Società": [
+            { title: "ff.125 USA: crollo di un impero", desc: "Chi sostituirà l'America? Cina o Internet?", link: "https://fortissimo.substack.com/p/ff125-usa-crollo-di-un-impero" },
+            { title: "ff.13 Popolazioni e polluzioni", desc: "Demografia, Nigeria e trend relazionali.", link: "https://fortissimo.substack.com/p/-ff13-popolazioni-e-polluzioni" },
+            { title: "ff.44 Che ansia! (pt. 1)", desc: "Perché pensare meno al futuro a volte fa bene.", link: "https://fortissimo.substack.com/p/ff42-che-ansia-pt-1" },
+            { title: "ff.62 Come evitare il burnout", desc: "Un'alternativa al lavoro d'ufficio 9-5.", link: "https://fortissimo.substack.com/p/ff61-come-evitare-il-burnout" },
+            { title: "ff.89 Meno Tinder, più relazioni", desc: "Piccolo principe, Conad e persone oltre le cose.", link: "https://fortissimo.substack.com/p/ff89-meno-tinder-piu-relazioni" },
+            { title: "ff.97 Tocchiamoci di più!", desc: "La scienza dei benefici di un abbraccio.", link: "https://fortissimo.substack.com/p/ff97-tocchiamoci-di-piu" }
+        ],
+        "Cibo & Corpo": [
+            { title: "ff.122 Naturale è meglio?", desc: "Cervello vs Supercomputer, scarpe di vermi.", link: "https://fortissimo.substack.com/p/ff122-naturale-e-meglio" },
+            { title: "ff.19 L'Hamburger di Hemingway", desc: "Mucche e fornelli inquinanti.", link: "https://fortissimo.substack.com/p/ff17-lhambuger-di-hemingway" },
+            { title: "ff.39 Come ti vesti?", desc: "Impatto della fast-fashion e vestiti tecnologici.", link: "https://fortissimo.substack.com/p/ff39-come-ti-vesti" },
+            { title: "ff.113 Fame chimica", desc: "Che rapporto avere col cibo?", link: "https://fortissimo.substack.com/p/ff113-fame-chimica" }
+        ]
+      };
+
+      const categories = {
+        "Natura": <Globe size={20} />,
+        "Tecnologia": <Zap size={20} />,
+        "Società": <Heart size={20} />,
+        "Cibo & Corpo": <Coffee size={20} />
+      };
 
       // --- Components ---
 
@@ -80,11 +208,11 @@
           <div 
             onClick={onClick}
             className={`
-              bg-white rounded-3xl border-2 border-brand-dark 
+              bg-white rounded-none border-2 border-brand-dark 
               shadow-neo transition-all duration-200 ease-out
-              hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-neo-hover
+              ${onClick ? 'hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-neo-hover cursor-pointer active:translate-x-[0px] active:translate-y-[0px] active:shadow-neo' : ''}
               flex flex-col relative overflow-hidden
-              ${noPadding ? '' : 'p-6'}
+              ${noPadding ? '' : 'p-6 md:p-8'}
               ${className}
             `}
           >
@@ -93,321 +221,332 @@
         );
       };
 
-      const CardHeader = ({ title, subtitle, icon }) => (
-        <div className="flex items-start justify-between mb-4">
-          <div>
-            <h3 className="font-bold text-xl leading-tight">{title}</h3>
-            {subtitle && <p className="text-gray-500 text-sm mt-1">{subtitle}</p>}
-          </div>
-          {icon && (
-            <div className="text-brand-dark bg-gray-100 p-2 rounded-xl">
-              {icon}
-            </div>
-          )}
+      const PixelScene = () => (
+        <div className="avatar-container">
+            <div style={{transform: 'scale(8)'}} className="pixel-scene"></div>
         </div>
       );
 
-      // --- Main App Component ---
+      const WikiOverlay = ({ isOpen, onClose }) => {
+        const [openSection, setOpenSection] = useState(null);
+
+        if (!isOpen) return null;
+
+        const toggleSection = (section) => {
+            setOpenSection(openSection === section ? null : section);
+        };
+
+        return (
+            <div className="fixed inset-0 z-50 flex items-center justify-center p-2 md:p-8 bg-brand-dark/80 backdrop-blur-sm animate-in fade-in duration-200">
+                <div className="bg-brand-bg w-full max-w-4xl h-[95vh] md:h-[90vh] rounded-none border-4 border-brand-dark shadow-neo hover:shadow-neo-hover overflow-hidden flex flex-col">
+                    
+                    {/* Header */}
+                    <div className="bg-io-yellow border-b-4 border-brand-dark p-6 flex justify-between items-center bg-grid-pattern relative">
+                        <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none"></div>
+                        <div className="bg-white border-2 border-brand-dark p-4 rounded-none shadow-neo-sm relative z-10">
+                            <h2 className="font-pixel text-4xl md:text-5xl text-brand-dark mb-0 leading-none tracking-tight">FUTURO FORTISSIMO</h2>
+                        </div>
+                        <button onClick={onClose} className="bg-white border-2 border-brand-dark p-3 rounded-none hover:bg-io-red hover:text-white transition-colors shadow-neo-sm hover:shadow-none translate-x-0 hover:translate-y-1 relative z-10">
+                            <X size={24} />
+                        </button>
+                    </div>
+
+                    {/* Content */}
+                    <div className="flex-1 overflow-y-auto p-4 md:p-8 space-y-6">
+                        <div className="bg-white border-2 border-brand-dark p-6 rounded-none shadow-sm">
+                            <p className="font-mono text-base md:text-lg mb-4">
+                                Benvenuti! Questa è una pubblicazione digitale in continua evoluzione, con contenuti da <a href="https://fortissimo.substack.com/" target="_blank" className="underline decoration-4 decoration-io-blue hover:bg-io-blue/20 transition-colors">futuro fortissimo</a>.
+                            </p>
+                            <div className="bg-brand-bg border-l-8 border-io-green p-4 font-mono text-sm">
+                                "Per quanto riguarda il futuro, il tuo compito non è prevederlo, ma renderlo possibile." — Antoine de Saint-Exupery
+                            </div>
+                        </div>
+
+                        <div className="grid gap-4">
+                            {Object.entries(wikiData).map(([category, items]) => (
+                                <div key={category} className="border-2 border-brand-dark rounded-none bg-white overflow-hidden transition-all">
+                                    <button 
+                                        onClick={() => toggleSection(category)}
+                                        className={`w-full flex items-center justify-between p-5 text-left hover:bg-gray-50 transition-colors ${openSection === category ? 'bg-io-blue/10' : ''}`}
+                                    >
+                                        <div className="flex items-center gap-3">
+                                            <div className="p-2 bg-brand-dark text-white rounded-none">
+                                                {categories[category]}
+                                            </div>
+                                            <span className="font-pixel text-3xl mt-1">{category}</span>
+                                        </div>
+                                        {openSection === category ? <ChevronDown size={24}/> : <ChevronRight size={24}/>}
+                                    </button>
+                                    
+                                    {openSection === category && (
+                                        <div className="border-t-2 border-brand-dark bg-brand-bg">
+                                            {items.map((item, idx) => (
+                                                <a 
+                                                    key={idx} 
+                                                    href={item.link} 
+                                                    target="_blank" 
+                                                    rel="noreferrer"
+                                                    className="block p-5 border-b-2 border-brand-dark last:border-0 hover:bg-white transition-colors group relative"
+                                                >
+                                                    <div className="absolute left-0 top-0 bottom-0 w-1 bg-io-yellow opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                                    <h4 className="font-bold text-lg mb-1 flex items-center gap-2 group-hover:text-io-blue font-sans">
+                                                        {item.title} <ArrowUpRight size={16} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                                                    </h4>
+                                                    <p className="text-gray-600 text-sm font-mono leading-relaxed">{item.desc}</p>
+                                                </a>
+                                            ))}
+                                        </div>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                    
+                    {/* Footer */}
+                    <div className="bg-white border-t-4 border-brand-dark p-4 text-center font-mono text-xs uppercase tracking-widest flex justify-center gap-4">
+                        <span className="w-3 h-3 bg-io-blue rounded-full"></span>
+                        <span className="w-3 h-3 bg-io-red rounded-full"></span>
+                        <span className="w-3 h-3 bg-io-yellow rounded-full"></span>
+                        <span className="w-3 h-3 bg-io-green rounded-full"></span>
+                    </div>
+                </div>
+            </div>
+        );
+      };
 
       const App = () => {
-        
-        const socialLinks = [
-          {
-            name: 'LinkedIn',
-            icon: <Linkedin size={24} />,
-            url: 'https://www.linkedin.com/in/michelemerelli/',
-            color: 'text-blue-600',
-            bgHover: 'hover:bg-blue-50'
-          },
-          {
-            name: 'Strava',
-            icon: <Activity size={24} />,
-            url: 'https://www.strava.com/athletes/14488475',
-            color: 'text-orange-500',
-            bgHover: 'hover:bg-orange-50'
-          },
-          {
-            name: 'Email Me',
-            icon: <Mail size={24} />,
-            url: 'mailto:michelemerelli.8@gmail.com',
-            color: 'text-gray-900',
-            bgHover: 'hover:bg-gray-100'
-          },
-          {
-            name: 'Newsletter',
-            icon: <FileText size={24} />,
-            url: 'https://fortissimo.substack.com/p/ff139-e-stato-lai',
-            color: 'text-purple-600',
-            bgHover: 'hover:bg-purple-50'
-          },
-          {
-              name: 'YouTube',
-              icon: <Youtube size={24} />,
-              url: 'https://www.youtube.com/@VeI2ax',
-              color: 'text-red-600',
-              bgHover: 'hover:bg-red-50'
-          }
-        ];
+        const [isWikiOpen, setWikiOpen] = useState(false);
 
         const apps = [
             {
                 name: 'Mangia Fortissimo',
                 desc: 'AI Recipe Assistant',
-                icon: <Utensils size={24} />,
+                action: 'OPEN APP',
+                icon: <Utensils size={28} />,
                 url: 'https://ai.studio/apps/drive/1uoLqlNLJwaPKWcPuwAiD-2GCnzXY2jHz',
-                color: 'bg-brand-accent'
+                color: 'bg-io-yellow',
+                textColor: 'text-brand-dark',
+                border: 'border-brand-dark'
             },
             {
                 name: 'Leggi Fortissimo',
                 desc: 'AI Reading Companion',
-                icon: <BookOpen size={24} />,
+                action: 'READ NOW',
+                icon: <BookOpen size={28} />,
                 url: 'https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221WPA0lWFGzTQP_gb7z6FWUEUGio91gAc4%22%5D,%22action%22:%22open%22,%22userId%22:%22106401608954636383910%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing',
-                color: 'bg-brand-green'
+                color: 'bg-io-green',
+                textColor: 'text-white',
+                border: 'border-brand-dark'
+            },
+            {
+                name: 'League of Strava',
+                desc: 'Compete & Analyze',
+                action: 'COMPETE',
+                icon: <Trophy size={28} />,
+                url: 'https://league-of-strava-9c2ffc34069e.herokuapp.com/',
+                color: 'bg-io-red',
+                textColor: 'text-white',
+                border: 'border-brand-dark'
             }
         ];
 
+        const socialLinks = [
+          {
+            name: 'Newsletter',
+            icon: <FileText size={20} />,
+            url: 'https://fortissimo.substack.com/p/ff139-e-stato-lai',
+            bg: 'hover:bg-io-yellow',
+            text: 'text-brand-dark'
+          },
+          {
+            name: 'LinkedIn',
+            icon: <Linkedin size={20} />,
+            url: 'https://www.linkedin.com/in/michelemerelli/',
+            bg: 'hover:bg-io-blue hover:text-white',
+            text: 'text-brand-dark'
+          },
+          {
+            name: 'Strava',
+            icon: <Activity size={20} />,
+            url: 'https://www.strava.com/athletes/14488475',
+            bg: 'hover:bg-io-red hover:text-white',
+            text: 'text-brand-dark'
+          },
+          {
+            name: 'YouTube',
+            icon: <Youtube size={20} />,
+            url: 'https://www.youtube.com/@VeI2ax',
+            bg: 'hover:bg-io-green hover:text-white',
+            text: 'text-brand-dark'
+          }
+        ];
+
         return (
-          <div className="min-h-screen p-4 md:p-8 lg:p-12 max-w-7xl mx-auto space-y-8">
+          <div className="min-h-screen relative flex flex-col justify-center overflow-x-hidden">
             
-            {/* Navbar - Simplified */}
-            <header className="flex justify-between items-center mb-8">
-              <div className="flex items-center gap-2">
-                <div className="w-10 h-10 bg-brand-dark text-white rounded-xl flex items-center justify-center font-bold text-xl shadow-neo-sm transform -rotate-2">
-                  M
-                </div>
-                <span className="font-bold text-xl tracking-tight">Michele Merelli</span>
-              </div>
-              
-              <a href="mailto:michelemerelli.8@gmail.com" className="px-5 py-2.5 bg-brand-dark text-white rounded-xl font-bold text-sm shadow-neo hover:translate-y-[-2px] hover:shadow-neo-hover transition-all">
-                Get in touch
-              </a>
-            </header>
+            {/* BACKGROUND: White Grid Top -> Pink/Purple Hue Bottom */}
+            <div className="fixed inset-0 z-0 bg-white"></div>
+            {/* Top Grid ("Quadretti") - Fades out towards bottom */}
+            <div className="absolute top-0 left-0 right-0 h-[60vh] bg-grid-pattern opacity-10 mask-image-gradient-to-b"></div>
+            <div className="absolute top-0 left-0 right-0 h-[60vh] bg-gradient-to-b from-transparent to-white"></div>
+            
+            {/* Bottom Hue */}
+            <div className="fixed bottom-0 left-0 right-0 h-[60vh] bg-gradient-to-t from-indigo-200 via-pink-100 to-transparent opacity-60 z-0 pointer-events-none"></div>
 
-            {/* Main Grid */}
-            <main className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 auto-rows-auto">
-              
-              {/* 1. Hero Card */}
-              <Card className="md:col-span-2 md:row-span-2 bg-white flex flex-col justify-between relative overflow-hidden min-h-[350px]">
-                <div className="z-10">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-bg border border-brand-dark text-xs font-bold mb-4">
-                    <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                    Based in Milan, Italy
+            <div className="p-4 md:p-8 lg:p-12 max-w-5xl mx-auto w-full relative z-10">
+              <main className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                {/* 1. Profile / Info Card - Left Side (Popup Style) */}
+                <div className="md:col-span-2 rounded-none border-4 border-brand-dark shadow-neo bg-white flex flex-col overflow-hidden relative group">
+                  {/* Profile Header - Blue with Grid Pattern to match Wiki Style */}
+                  <div className="bg-io-blue border-b-4 border-brand-dark p-6 relative overflow-hidden">
+                      <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none"></div>
+                      <div className="flex justify-between items-center relative z-10">
+                          <div className="bg-white border-2 border-brand-dark p-3 px-6 rounded-none shadow-neo-sm">
+                              <h1 className="font-pixel text-5xl text-brand-dark leading-none tracking-tight">MICHELE MERELLI</h1>
+                          </div>
+                      </div>
                   </div>
-                  <h1 className="text-4xl md:text-5xl lg:text-5xl font-extrabold tracking-tight mb-4 leading-[1.1]">
-                    Futurist, Engineer & <span className="bg-brand-accent px-1">Builder.</span>
-                  </h1>
-                  <p className="text-gray-600 text-lg font-medium max-w-lg mt-4">
-                    Bridging the gap between <strong>Science</strong>, <strong>Engineering</strong>, and <strong>Decentralization</strong>. 
-                  </p>
-                </div>
-                
-                <div className="flex flex-wrap gap-3 mt-8 z-10">
-                   <button onClick={() => window.open('https://linkedin.com/in/michelemerelli/', '_blank')} className="flex items-center gap-2 px-6 py-3 bg-brand-dark text-white rounded-xl font-bold shadow-neo hover:translate-y-[-2px] hover:shadow-neo-hover transition-all">
-                      <FileText size={18} />
-                      Full CV
-                   </button>
-                </div>
-                
-                {/* Abstract Background Element */}
-                <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-brand-accent rounded-full opacity-20 blur-3xl pointer-events-none"></div>
-              </Card>
 
-              {/* 2. Quick Insights */}
-              <Card className="md:col-span-2 bg-brand-bg flex flex-col justify-center min-h-[160px]">
-                  <CardHeader title="The Convergence" icon={<Cpu size={20} />} />
-                  <p className="text-sm font-medium text-gray-700 leading-relaxed">
-                    Passionate about digital transition, simulations, and disruptive tech. 
-                    Background in <span className="underline decoration-brand-accent decoration-2">Nanoscience</span> and <span className="underline decoration-brand-accent decoration-2">Mechanical Engineering</span>.
-                  </p>
-              </Card>
+                  {/* Profile Body */}
+                  <div className="bg-white p-6 flex-1 flex flex-col sm:flex-row gap-8 items-center sm:items-stretch">
+                      {/* Avatar */}
+                      <div className="flex-shrink-0 w-36 h-36 bg-brand-bg border-4 border-brand-dark rounded-none overflow-hidden shadow-neo-sm flex items-center justify-center">
+                          <PixelScene />
+                      </div>
 
-              {/* 3. Apps Section */}
-              {apps.map((app) => (
-                  <Card 
-                      key={app.name} 
-                      className={`${app.color} border-brand-dark cursor-pointer group relative overflow-hidden flex flex-col justify-between min-h-[160px]`}
-                      onClick={() => window.open(app.url, '_blank')}
-                  >
-                      <div className="absolute right-[-20px] top-[-20px] opacity-10 group-hover:opacity-20 transition-opacity transform group-hover:scale-110 duration-500">
-                          {React.cloneElement(app.icon, { size: 100 })}
-                      </div>
-                      <div className="flex justify-between items-start z-10">
-                          <div className="p-2 bg-white rounded-lg border-2 border-brand-dark shadow-neo-sm">
-                              {React.cloneElement(app.icon, { size: 24, className: "text-brand-dark" })}
-                          </div>
-                          <ArrowUpRight className="text-brand-dark opacity-50 group-hover:opacity-100 transition-opacity" />
-                      </div>
-                      <div className="z-10 mt-4">
-                          <h3 className="font-extrabold text-xl text-brand-dark">{app.name}</h3>
-                          <p className="text-brand-dark/80 font-bold text-sm">{app.desc}</p>
-                      </div>
-                  </Card>
-              ))}
-
-              {/* 4. Experience & Education List */}
-              <Card className="md:col-span-2 md:row-span-2 overflow-hidden flex flex-col">
-                  <CardHeader title="Experience & Education" icon={<Briefcase size={20} />} />
-                  <div className="flex flex-col gap-4 overflow-y-auto pr-2 custom-scrollbar">
-                      
-                      {/* Work Experience */}
-                      <div className="flex gap-4 p-3 rounded-2xl hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-200">
-                          <div className="mt-1 min-w-[48px] h-12 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 border border-orange-200">
-                              <TrendingUp size={20} />
-                          </div>
-                          <div>
-                              <div className="flex items-center gap-2 flex-wrap">
-                                  <h4 className="font-bold text-lg">Particleworks Europe</h4>
-                                  <span className="text-xs font-bold bg-green-100 text-green-700 px-2 py-0.5 rounded-full">Current</span>
+                      {/* Info Grid */}
+                      <div className="flex-1 w-full grid grid-cols-1 sm:grid-cols-2 gap-4 content-center">
+                           <div className="flex flex-col p-3 bg-white border-2 border-io-red rounded-none shadow-[4px_4px_0px_0px_#EA4335] hover:translate-x-1 transition-transform cursor-default">
+                              <span className="font-mono text-[10px] text-io-red uppercase font-bold tracking-widest mb-1">Location</span>
+                              <div className="flex items-center gap-2 font-bold font-sans text-brand-dark text-lg">
+                                  Milan, IT <MapPin size={18} className="text-io-red" />
                               </div>
-                              <p className="text-sm font-bold text-gray-500">VP Growth & Marketing (2021 - Present)</p>
-                              <p className="text-sm text-gray-600 mt-1">
-                                  Managed European reseller network. Led lead gen & outreach for mesh-less CFD software.
-                              </p>
-                          </div>
-                      </div>
-
-                      <div className="flex gap-4 p-3 rounded-2xl hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-200">
-                          <div className="mt-1 min-w-[48px] h-12 bg-gray-100 rounded-xl flex items-center justify-center text-gray-600 border border-gray-200">
-                              <Zap size={20} />
-                          </div>
-                          <div>
-                              <h4 className="font-bold text-lg">EnginSoft</h4>
-                              <p className="text-sm font-bold text-gray-500">Simulation Engineer (2018 - Present)</p>
-                              <p className="text-sm text-gray-600 mt-1">
-                                  Expert in CAE/CFD simulations (e-motor cooling, gearbox lubrication).
-                              </p>
-                          </div>
-                      </div>
-
-                      {/* Divider */}
-                      <div className="flex items-center gap-2 py-2">
-                          <div className="h-px bg-gray-200 flex-1"></div>
-                          <span className="text-xs font-black uppercase text-gray-400 tracking-wider">Education</span>
-                          <div className="h-px bg-gray-200 flex-1"></div>
-                      </div>
-
-                      {/* Education */}
-                      <div className="flex gap-4 p-3 rounded-2xl hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-200">
-                          <div className="mt-1 min-w-[48px] h-12 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 border border-blue-200">
-                              <GraduationCap size={20} />
-                          </div>
-                          <div>
-                              <h4 className="font-bold text-lg">MSc Nanoscience</h4>
-                              <p className="text-sm font-bold text-gray-500">University of Groningen (2016 - 2018)</p>
-                              <p className="text-sm text-gray-600 mt-1">
-                                  Thesis: Molecular Electronics. Cum Laude Distinction.
-                              </p>
-                          </div>
-                      </div>
-
-                      <div className="flex gap-4 p-3 rounded-2xl hover:bg-gray-50 transition-colors border border-transparent hover:border-gray-200">
-                          <div className="mt-1 min-w-[48px] h-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-500 border border-blue-100">
-                              <GraduationCap size={20} />
-                          </div>
-                          <div>
-                              <h4 className="font-bold text-lg">BEng Materials & Nanotech</h4>
-                              <p className="text-sm font-bold text-gray-500">Politecnico di Milano (2013 - 2016)</p>
-                              <p className="text-sm text-gray-600 mt-1">
-                                   Grade: 109/110. Thesis: Organic Nanoparticles for Biomedical Applications.
-                              </p>
-                          </div>
-                      </div>
-
-                  </div>
-              </Card>
-
-              {/* 5. Uniform Social Links Grid */}
-              <div className="md:col-span-2 md:row-span-2 grid grid-cols-2 gap-4">
-                   {socialLinks.map((link) => (
-                       <Card 
-                          key={link.name} 
-                          className={`flex flex-col justify-center items-center gap-3 cursor-pointer transition-all hover:scale-[1.02] ${link.bgHover}`}
-                          onClick={() => window.open(link.url, '_blank')}
-                       >
-                          <div className={`${link.color} p-3 bg-white rounded-2xl border-2 border-gray-100 shadow-sm`}>
-                              {link.icon}
-                          </div>
-                          <div className="text-center">
-                              <span className="font-bold text-brand-dark block">{link.name}</span>
-                              <span className="text-xs text-gray-400 font-bold flex items-center justify-center gap-1 group">
-                                  Visit <ArrowUpRight size={12} />
-                              </span>
-                          </div>
-                       </Card>
-                   ))}
-                   {/* Filler Card for even grid */}
-                   <Card className="flex flex-col justify-center items-center gap-2 bg-brand-dark text-white cursor-default">
-                      <Globe size={24} className="opacity-50" />
-                      <span className="font-bold text-sm">EN / IT</span>
-                      <span className="text-xs text-gray-400">Native / Prof</span>
-                   </Card>
-              </div>
-
-              {/* 6. Skills & Interests (Replaces Chat) */}
-              <Card className="md:col-span-2 md:row-span-2 flex flex-col gap-6">
-                  <CardHeader title="Skills & Interests" icon={<Award size={20} />} />
-                  
-                  <div className="space-y-4">
-                      <div>
-                          <h4 className="font-bold text-sm text-gray-500 mb-2 flex items-center gap-2">
-                              <Code size={16} /> Technical & Engineering
-                          </h4>
-                          <div className="flex flex-wrap gap-2">
-                              {['Python', 'HTML', 'FastAPI', 'Docker', 'CFD (Particleworks)', 'CAD (SpaceClaim)'].map(skill => (
-                                  <span key={skill} className="px-3 py-1 bg-gray-100 rounded-lg text-sm font-bold text-gray-700 border border-gray-200">
-                                      {skill}
-                                  </span>
-                              ))}
-                          </div>
-                      </div>
-
-                      <div>
-                          <h4 className="font-bold text-sm text-gray-500 mb-2 flex items-center gap-2">
-                               <Dumbbell size={16} /> Athletics & Extracurriculars
-                          </h4>
-                          <div className="space-y-2">
-                               <div className="flex items-center gap-3 p-2 bg-yellow-50 rounded-xl border border-yellow-100">
-                                  <span className="text-xl">🏊‍♂️🚴🏃</span>
-                                  <span className="font-bold text-brand-dark text-sm">Ironman 70.3 Finisher</span>
-                               </div>
-                               <div className="flex items-center gap-3 p-2 bg-blue-50 rounded-xl border border-blue-100">
-                                  <span className="text-xl">🏃‍♂️</span>
-                                  <span className="font-bold text-brand-dark text-sm">Boston Marathon Finisher</span>
-                               </div>
-                               <div className="flex items-center gap-3 p-2 bg-purple-50 rounded-xl border border-purple-100">
-                                  <span className="text-xl">📈</span>
-                                  <span className="font-bold text-brand-dark text-sm">Active Investor (Crypto/Stocks)</span>
-                               </div>
-                          </div>
-                      </div>
-                      
-                      <div>
-                          <h4 className="font-bold text-sm text-gray-500 mb-2 flex items-center gap-2">
-                               <Award size={16} /> Certificates
-                          </h4>
-                           <ul className="text-sm font-medium text-gray-600 list-disc list-inside space-y-1">
-                              <li>HarvardX: Intro to AI with Python</li>
-                              <li>IELTS: 7.5 (2015)</li>
-                           </ul>
+                           </div>
+                           <div className="flex flex-col p-3 bg-white border-2 border-io-yellow rounded-none shadow-[4px_4px_0px_0px_#FBBC04] hover:translate-x-1 transition-transform cursor-default">
+                              <span className="font-mono text-[10px] text-io-yellow uppercase font-bold tracking-widest mb-1">Born</span>
+                              <div className="flex items-center gap-2 font-bold font-sans text-brand-dark text-lg">
+                                  1994 <Calendar size={18} className="text-io-yellow" />
+                              </div>
+                           </div>
+                           <a href="mailto:michelemerelli.8@gmail.com" className="flex flex-col p-3 bg-white border-2 border-io-green rounded-none shadow-[4px_4px_0px_0px_#34A853] hover:translate-x-1 hover:bg-io-green/5 transition-all cursor-pointer">
+                              <span className="font-mono text-[10px] text-io-green uppercase font-bold tracking-widest mb-1">Email</span>
+                              <div className="flex items-center gap-2 font-bold font-sans text-brand-dark text-lg truncate">
+                                  Gmail <Mail size={18} className="text-io-green" />
+                              </div>
+                           </a>
+                           <div className="flex flex-col p-3 bg-white border-2 border-io-blue rounded-none shadow-[4px_4px_0px_0px_#4285F4] hover:translate-x-1 transition-transform cursor-default">
+                              <span className="font-mono text-[10px] text-io-blue uppercase font-bold tracking-widest mb-1">MSc</span>
+                              <div className="flex items-center gap-2 font-bold font-sans text-brand-dark text-lg">
+                                  Nanoscience <Cpu size={18} className="text-io-blue" />
+                              </div>
+                           </div>
                       </div>
                   </div>
-              </Card>
+                </div>
 
-            </main>
+                {/* 2. Social Dock */}
+                <Card className="flex flex-col justify-center gap-3 bg-white">
+                   <div className="grid grid-cols-1 gap-3 h-full">
+                      {socialLinks.map((link) => (
+                          <a 
+                              key={link.name}
+                              href={link.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={`flex items-center justify-between p-4 rounded-none border-2 border-brand-dark bg-white transition-all shadow-sm hover:shadow-neo-sm ${link.bg} group h-full`}
+                          >
+                              <div className="flex items-center gap-3">
+                                  <span className={`${link.text} group-hover:text-inherit`}>{link.icon}</span>
+                                  <span className={`font-bold font-pixel text-2xl mt-1 text-brand-dark group-hover:text-inherit`}>{link.name}</span>
+                              </div>
+                              <ArrowUpRight size={20} className="text-brand-dark group-hover:text-inherit" />
+                          </a>
+                      ))}
+                   </div>
+                </Card>
 
-            {/* Footer */}
-            <footer className="pt-12 pb-8 border-t-2 border-gray-200 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm font-medium">
-              <p>&copy; 2024 Michele Merelli. All rights reserved.</p>
-              <div className="flex gap-6 mt-4 md:mt-0">
-                  <a href="mailto:michelemerelli.8@gmail.com" className="hover:text-brand-dark">Email</a>
-                  <a href="https://linkedin.com/in/michelemerelli/" className="hover:text-brand-dark">LinkedIn</a>
-              </div>
-            </footer>
+                {/* 3. Apps - Middle Row */}
+                {apps.map((app) => (
+                    <Card 
+                        key={app.name} 
+                        className={`${app.color} group min-h-[220px] justify-between border-4 ${app.border}`}
+                        onClick={() => window.open(app.url, '_blank')}
+                    >
+                        <div className="flex justify-between items-start">
+                            <div className={`p-3 bg-white border-2 border-brand-dark shadow-sm text-brand-dark rounded-none`}>
+                                {app.icon}
+                            </div>
+                            <div className="w-10 h-10 bg-black/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all">
+                                 <ArrowUpRight size={24} className={app.textColor === 'text-white' ? 'text-white' : 'text-brand-dark'} />
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 className={`font-pixel text-4xl ${app.textColor} mb-2 leading-none`}>{app.name}</h3>
+                            <p className={`font-bold font-mono text-xs uppercase tracking-widest opacity-90 mb-4 ${app.textColor}`}>{app.desc}</p>
+                            <div className={`inline-block px-3 py-1 border-2 border-brand-dark bg-white text-brand-dark font-pixel text-lg shadow-sm group-hover:shadow-none transition-shadow`}>
+                              {app.action} ->
+                            </div>
+                        </div>
+                    </Card>
+                ))}
+
+                {/* 4. Futuro Fortissimo - Wiki Trigger (Double Width) */}
+                <Card 
+                    className="md:col-span-2 bg-io-yellow group min-h-[220px] justify-between text-brand-dark cursor-pointer relative overflow-hidden border-4 border-brand-dark"
+                    onClick={() => setWikiOpen(true)}
+                >
+                    <div className="absolute inset-0 bg-grid-pattern opacity-20"></div>
+                    
+                    <div className="flex justify-between items-start relative z-10">
+                        <div className={`p-3 bg-white border-2 border-brand-dark shadow-sm text-brand-dark rounded-none`}>
+                            <Archive size={28} />
+                        </div>
+                        <div className="px-3 py-1 bg-brand-dark text-white text-xs font-pixel rounded-none border border-white/20">
+                            KNOWLEDGE BASE
+                        </div>
+                    </div>
+                    
+                    <div className="relative z-10 mt-auto">
+                        <h3 className="font-pixel text-5xl mb-1 leading-none">FUTURO FORTISSIMO</h3>
+                        <p className="font-bold font-mono text-sm opacity-100 mb-4">Archive & Knowledge Base</p>
+                        <div className="inline-block px-3 py-1 border-2 border-brand-dark bg-white text-brand-dark font-pixel text-lg shadow-sm group-hover:shadow-none transition-shadow">
+                          EXPLORE WIKI ->
+                        </div>
+                    </div>
+                </Card>
+
+                {/* 5. Spotify Card (Single Width) */}
+                <Card 
+                    className="bg-[#1DB954] group min-h-[220px] justify-between text-brand-dark cursor-pointer border-4 border-brand-dark"
+                    onClick={() => window.open('https://open.spotify.com/show/7ukghSFquExHfZCmNG8jl3', '_blank')}
+                >
+                    <div className="flex justify-between items-start">
+                        <div className="p-3 bg-white border-2 border-brand-dark shadow-sm text-brand-dark rounded-none">
+                            <Music size={28} />
+                        </div>
+                        <div className="w-10 h-10 bg-black/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all">
+                             <ArrowUpRight size={24} className="text-brand-dark" />
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 className="font-pixel text-4xl mb-1 leading-none">SPOTIFY</h3>
+                        <p className="font-bold font-mono text-sm opacity-100 mb-4">Listen to the Podcast</p>
+                        <div className="inline-block px-3 py-1 border-2 border-brand-dark bg-white text-brand-dark font-pixel text-lg shadow-sm group-hover:shadow-none transition-shadow">
+                          LISTEN ->
+                        </div>
+                    </div>
+                </Card>
+
+              </main>
+
+              <WikiOverlay isOpen={isWikiOpen} onClose={() => setWikiOpen(false)} />
+            </div>
           </div>
         );
       };
-
-      // --- Mount the App ---
 
       const rootElement = document.getElementById('root');
       if (rootElement) {
