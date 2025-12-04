@@ -77,7 +77,7 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen p-4 md:p-8 lg:p-12 max-w-7xl mx-auto space-y-8">
       
-      {/* Navbar */}
+      {/* Navbar - Simplified */}
       <header className="flex justify-between items-center mb-8">
         <div className="flex items-center gap-2">
           <div className="w-10 h-10 bg-brand-dark text-white rounded-xl flex items-center justify-center font-bold text-xl shadow-neo-sm transform -rotate-2">
@@ -94,7 +94,7 @@ const App: React.FC = () => {
       {/* Main Grid */}
       <main className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 auto-rows-auto">
         
-        {/* 1. Hero Card - Name & Core Value Prop */}
+        {/* 1. Hero Card */}
         <Card className="md:col-span-2 md:row-span-2 bg-white flex flex-col justify-between relative overflow-hidden min-h-[350px]">
           <div className="z-10">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-bg border border-brand-dark text-xs font-bold mb-4">
@@ -110,9 +110,9 @@ const App: React.FC = () => {
           </div>
           
           <div className="flex flex-wrap gap-3 mt-8 z-10">
-             <button className="flex items-center gap-2 px-6 py-3 bg-brand-dark text-white rounded-xl font-bold shadow-neo hover:translate-y-[-2px] hover:shadow-neo-hover transition-all">
+             <button onClick={() => window.open('https://linkedin.com/in/michelemerelli/', '_blank')} className="flex items-center gap-2 px-6 py-3 bg-brand-dark text-white rounded-xl font-bold shadow-neo hover:translate-y-[-2px] hover:shadow-neo-hover transition-all">
                 <FileText size={18} />
-                Resume
+                Full CV
              </button>
           </div>
           
@@ -120,7 +120,7 @@ const App: React.FC = () => {
           <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-brand-accent rounded-full opacity-20 blur-3xl pointer-events-none"></div>
         </Card>
 
-        {/* 2. Quick Insights / About */}
+        {/* 2. Quick Insights */}
         <Card className="md:col-span-2 bg-brand-bg flex flex-col justify-center min-h-[160px]">
             <CardHeader title="The Convergence" icon={<Cpu size={20} />} />
             <p className="text-sm font-medium text-gray-700 leading-relaxed">
@@ -213,7 +213,7 @@ const App: React.FC = () => {
                         <GraduationCap size={20} />
                     </div>
                     <div>
-                        <h4 className="font-bold text-lg">BEng Materials & Nanotechnology</h4>
+                        <h4 className="font-bold text-lg">BEng Materials & Nanotech</h4>
                         <p className="text-sm font-bold text-gray-500">Politecnico di Milano (2013 - 2016)</p>
                         <p className="text-sm text-gray-600 mt-1">
                              Grade: 109/110. Thesis: Organic Nanoparticles for Biomedical Applications.
