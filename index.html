@@ -3,7 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- SEO & Metadata -->
     <title>Michele Merelli | Profile</title>
+    <meta name="description" content="Personal website of Michele Merelli. Multidisciplinary professional, Futurist, and Business Developer based in Milan. Explore apps, articles, and the Futuro Fortissimo newsletter.">
+    <meta name="keywords" content="Michele Merelli, Futuro Fortissimo, Newsletter, Innovation, Technology, Milan, Portfolio, Engineer, Blockchain, AI Apps, Mangia Fortissimo">
+    <meta name="author" content="Michele Merelli">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://micmer-git.github.io/">
+    <meta property="og:title" content="Michele Merelli | Profile">
+    <meta property="og:description" content="Innovation, Tech, and Future. Discover Futuro Fortissimo and AI Apps by Michele Merelli.">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://micmer-git.github.io/">
+    <meta property="twitter:title" content="Michele Merelli | Profile">
+    <meta property="twitter:description" content="Innovation, Tech, and Future. Discover Futuro Fortissimo and AI Apps by Michele Merelli.">
+
+    <!-- Super Geo SEO (Milan, Italy) -->
+    <meta name="geo.region" content="IT-MI">
+    <meta name="geo.placename" content="Milan">
+    <meta name="geo.position" content="45.4642;9.1900">
+    <meta name="ICBM" content="45.4642, 9.1900">
+
+    <!-- Structured Data (JSON-LD) for Google Knowledge Graph -->
+    <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "Michele Merelli",
+      "jobTitle": "Multidisciplinary Professional & Futurist",
+      "url": "https://micmer-git.github.io/",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Milan",
+        "addressRegion": "MI",
+        "addressCountry": "Italy"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/michelemerelli/",
+        "https://fortissimo.substack.com/",
+        "https://www.strava.com/athletes/14488475",
+        "https://www.youtube.com/@VeI2ax"
+      ]
+    }
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=VT323&display=swap" rel="stylesheet">
     
@@ -161,7 +212,8 @@
         Plane,
         Newspaper,
         LayoutGrid,
-        CloudRain
+        CloudRain,
+        Gamepad2
       } from 'lucide-react';
 
       // --- Data Content ---
@@ -261,6 +313,16 @@
                 url: 'https://ai.studio/apps/drive/1SxGdC2joJZHbcU3BgSchJI87Z9pAiqss',
                 color: 'bg-io-blue',
                 textColor: 'text-white',
+                border: 'border-brand-dark'
+            },
+            {
+                name: 'Yu-Gi-Oh Japanese',
+                desc: 'Learn with Cards',
+                action: 'START DUEL',
+                icon: <Gamepad2 size={32} />,
+                url: 'https://ai.studio/apps/drive/1oqLZiu7sr0wKv-5ruI-baKPVhh72_skH',
+                color: 'bg-io-yellow',
+                textColor: 'text-brand-dark',
                 border: 'border-brand-dark'
             }
       ];
